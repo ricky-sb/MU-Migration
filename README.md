@@ -15,7 +15,7 @@ It exports everything into a zip package which can be used to automatically impo
 - WP-CLI >= 0.23
 
 #### Via WP-CLI Package Manager (requires wp-cli >= 0.23)
-Just run `wp package install 10up/mu-migration`.
+Just run `wp package install ricky-sb/mu-migration`.
 
 If you run into memory issues when installing the package, it's a known WP-CLI issue. [Check this out for a workaround](https://make.wordpress.org/cli/handbook/common-issues/#php-fatal-error-allowed-memory-size-of-999999-bytes-exhausted-tried-to-allocate-99-bytes).
 #### Installing as a plugin
