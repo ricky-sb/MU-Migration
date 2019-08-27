@@ -678,11 +678,11 @@ class ImportCommand extends MUMigrationBase {
 			//build sed expressions
 			$sed_commands = array();
 			foreach ( $mysql_chunks_regex as $regex ) {
-				$sed_commands[] = "s/{$regex} `{$old_db_prefix}/{$regex} `{$new_prefix}/g";
+				$sed_commands[] = "s/{$regex} `\(fk_\)\?{$old_db_prefix}/{$regex} `\\1{$new_prefix}/g";
 			}
 
 			foreach ( $sed_commands as $sed_command ) {
-				$full_command = "sed '$sed_command' -i $filename";
+				$full_command = "sed '$sed_command' -ir $filename";
 				$sed_result   = \WP_CLI::launch( $full_command, false, false );
 
 				if ( 0 !== $sed_result ) {
